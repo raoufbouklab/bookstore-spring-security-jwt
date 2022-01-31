@@ -1,7 +1,7 @@
 package com.rabouk.bookstore.domain.dto;
 
-import com.rabouk.bookstore.validation.PasswordValueMatch;
-import com.rabouk.bookstore.validation.ValidPassword;
+import com.rabouk.bookstore.domain.validation.PasswordValueMatch;
+import com.rabouk.bookstore.domain.validation.ValidPassword;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

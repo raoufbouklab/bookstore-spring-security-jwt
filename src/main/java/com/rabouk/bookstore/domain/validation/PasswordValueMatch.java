@@ -1,4 +1,4 @@
-package com.rabouk.bookstore.validation;
+package com.rabouk.bookstore.domain.validation;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

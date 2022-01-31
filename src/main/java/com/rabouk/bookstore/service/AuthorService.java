@@ -36,7 +36,9 @@ public class AuthorService {
 
     @Transactional
     public AuthorResponseDto create(AuthorRequestDto authorRequestDto) {
-        if (authorRepository.findByFirstNameAndLastName(authorRequestDto.getFirstName(), authorRequestDto.getLastName()).isPresent()) {
+        Optional<Author> optionalAuthor = authorRepository.findByFirstNameAndLastName(authorRequestDto.getFirstName(),
+                authorRequestDto.getLastName());
+        if (optionalAuthor.isPresent()) {
             throw new FoundException("Author exists!");
         }
         Author author = authorMapper.mapAuthorRequestDtoToAuthor(authorRequestDto);

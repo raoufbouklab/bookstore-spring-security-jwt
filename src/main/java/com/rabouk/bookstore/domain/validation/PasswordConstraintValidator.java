@@ -1,4 +1,4 @@
-package com.rabouk.bookstore.validation;
+package com.rabouk.bookstore.domain.validation;
 
 import lombok.SneakyThrows;
 import org.passay.*;
@@ -67,5 +67,4 @@ public class PasswordConstraintValidator implements ConstraintValidator<ValidPas
                 .disableDefaultConstraintViolation();
         return false;
     }
-
 }

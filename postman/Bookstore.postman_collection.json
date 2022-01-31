@@ -1,0 +1,920 @@
+{
+	"info": {
+		"_postman_id": "3b86cf30-32cd-40df-8f77-30e9323d9a77",
+		"name": "Bookstore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "get all users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/bookstore/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bookstore",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/bookstore/v1/user/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bookstore",
+								"v1",
+								"user",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"ramzi.book@dee.cd\",\r\n  \"firstName\": \"Ramzi\",\r\n  \"lastName\": \"Bouklab\",\r\n  \"password\": \"Test-t77dd\",\r\n  \"confirmPassword\": \"Test-t77dd\",\r\n  \"username\": \"ramzi.bouk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/public/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"public",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user - author admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"test@dee.cd\",\r\n  \"firstName\": \"Houda\",\r\n  \"lastName\": \"Bouklab\",\r\n  \"password\": \"Test-t77dd\",\r\n  \"confirmPassword\": \"Test-t77dd\",\r\n  \"username\": \"houda.bouk\",\r\n  \"authorities\": [\"ROLE_AUTHOR_ADMIN\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/bookstore/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bookstore",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user - book admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"test@dee.cd\",\r\n  \"firstName\": \"Redouane\",\r\n  \"lastName\": \"Bouklab\",\r\n  \"password\": \"Test-t77dd\",\r\n  \"confirmPassword\": \"Test-t77dd\",\r\n  \"username\": \"redouane.bouk\",\r\n  \"authorities\": [\"ROLE_BOOK_ADMIN\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/bookstore/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bookstore",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"ramzi.booklab@gmail.com\",\r\n  \"firstName\": \"Ramzi\",\r\n  \"lastName\": \"Bouklab\",\r\n  \"password\": \"Test-t77dd\",\r\n  \"confirmPassword\": \"Test-t77dd\",\r\n  \"username\": \"ramzi.bouk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/bookstore/v1/user/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bookstore",
+								"v1",
+								"user",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/bookstore/v1/user/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bookstore",
+								"v1",
+								"user",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "authors",
+			"item": [
+				{
+					"name": "get all authors",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/bookstore/v1/author",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bookstore",
+								"v1",
+								"author"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get author by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/bookstore/v1/author/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bookstore",
+								"v1",
+								"author",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get books by author id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/bookstore/v1/author/8/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bookstore",
+								"v1",
+								"author",
+								"8",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add author",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"about\": \"Policeman operated at Jijel\",\r\n  \"firstName\": \"Redouane\",\r\n  \"lastName\": \"Bouklab\",\r\n  \"nationality\": \"Algerian\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/bookstore/v1/author",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bookstore",
+								"v1",
+								"author"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update author",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"about\": \"Policeman operated at sidi-marouf Jijel\",\r\n  \"firstName\": \"Redouane\",\r\n  \"lastName\": \"Bouklab\",\r\n  \"nationality\": \"Algerian\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/bookstore/v1/author/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bookstore",
+								"v1",
+								"author",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete author",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/bookstore/v1/author/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bookstore",
+								"v1",
+								"author",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "get all books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"about\": \"Operateur\",\r\n  \"firstName\": \"ramzi\",\r\n  \"lastName\": \"bouklab\",\r\n  \"nationality\": \"Algerian\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/bookstore/v1/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bookstore",
+								"v1",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get books by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/bookstore/v1/book/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bookstore",
+								"v1",
+								"book",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get authors of a book by book id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"about\": \"Operateur\",\r\n  \"firstName\": \"ramzi\",\r\n  \"lastName\": \"bouklab\",\r\n  \"nationality\": \"Algerian\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/bookstore/v1/book/10/authors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bookstore",
+								"v1",
+								"book",
+								"10",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"about\": \"Java 17 programming new features\",\r\n  \"authorsIds\": [8],\r\n  \"isbn13\": \"TS747444\",\r\n  \"language\": \"EN\",\r\n  \"noPage\": 120,\r\n  \"publishDate\": \"2020-01-28\",\r\n  \"publisher\": \"South Algeria\",\r\n  \"title\": \"Java programming\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/bookstore/v1/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bookstore",
+								"v1",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n        \"title\": \"Java programming 2\",\r\n        \"about\": \"Java 17 programming 2 new features\",\r\n        \"noPage\": 120,\r\n        \"language\": \"EN\",\r\n        \"isbn13\": \"TS747444\",\r\n        \"publisher\": \"South Algeria\",\r\n        \"publishDate\": \"2020-01-28\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/bookstore/v1/book/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bookstore",
+								"v1",
+								"book",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/bookstore/v1/book/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bookstore",
+								"v1",
+								"book",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"password\": \"Test_42519\",\r\n  \"username\": \"raouf.bouklab\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/public/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"public",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"password\": \"Test-t77dd\",\r\n  \"username\": \"ramzi.bouk\"\r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/public/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"public",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login author admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"password\": \"Test-t77dd\", \r\n  \"username\": \"houda.bouk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/public/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"public",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login book admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"password\": \"Test-t77dd\",\r\n  \"username\": \"redouane.bouk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/public/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"public",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW91Zi5ib3VrbGFiIiwiZXhwIjoxNjQzNjgzMjc0LCJpYXQiOjE2NDM1OTY4NzR9.8-I5B-ngI_Q7GtFbRL4VcKN_LDwqm4T-eaAgozEX6flk-K7SXmQPGsisjgGA0qzU_4SJ-p0MtjJKjIR8kZ3_hQ",
+			"type": "string"
+		}
+	]
+}
